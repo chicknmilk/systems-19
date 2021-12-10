@@ -33,7 +33,7 @@ int main() {
     while (strlen(buffer) == 0) {
       read(fd1, buffer, 1024);
     }
-    
+
     int i = 0;
 
     while (buffer[i]) {
@@ -45,6 +45,8 @@ int main() {
       buffer[i] = toupper(buffer[i]);
       i++;
     }
+
+    printf("sending back to user\n");
 
     write(fd2, buffer, strlen(buffer));
   }
