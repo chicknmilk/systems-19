@@ -16,8 +16,8 @@ int main() {
   mkfifo("pipe1", 0644);
   mkfifo("pipe2", 0644);
 
-  int fd1 = open("pipe1", O_RDONLY);
-  int fd2 = open("pipe2", O_WRONLY);
+  int fd1 = open("pipe1", O_WRONLY);
+  int fd2 = open("pipe2", O_RDONLY);
 
   while (1) {
       

@@ -21,18 +21,13 @@ int toupper(int c) {
 
 int main() {
 
-  int fd1 = open("pipe1", O_WRONLY);
-  int fd2 = open("pipe2", O_RDONLY);
+  int fd1 = open("pipe1", O_RDONLY);
+  int fd2 = open("pipe2", O_WRONLY);
 
   while (1) {
 
     char buffer[1024];
     read(fd1, buffer, 1024);
-
-    // pause until buffer is filled
-    while (strlen(buffer) == 0) {
-      read(fd1, buffer, 1024);
-    }
 
     int i = 0;
 
