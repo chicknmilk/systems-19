@@ -28,6 +28,12 @@ int main() {
 
     char buffer[1024];
     read(fd1, buffer, 1024);
+
+    // pause until buffer is filled
+    while (strlen(buffer) == 0) {
+      read(fd1, buffer, 1024);
+    }
+    
     int i = 0;
 
     while (buffer[i]) {
