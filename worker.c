@@ -40,6 +40,7 @@ int main() {
       i++;
     }
 
+    printf("returning processed string to parent process\n");
     write(fd2, buffer, strlen(buffer));
   }
 
